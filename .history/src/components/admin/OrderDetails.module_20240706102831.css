@@ -1,0 +1,8 @@
+.details{
+    display: inline-flex;
+    flex-direction: column;
+    gap
+}
+.orderInfo{
+    display: inline-flex;
+}

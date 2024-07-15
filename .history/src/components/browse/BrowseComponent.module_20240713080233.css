@@ -1,0 +1,46 @@
+/* Equivalent CSS for the given styles object */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 50px 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F5F5;
+  justify-content: center;
+  align-items: center;
+  width: 30%; /* Adjust based on the number of categories per row */
+  margin: 10px;
+  gap: 30px;
+  padding: 20px;
+}
+
+.icon {
+  /* Placeholder for the icon styles */
+  height: 100%;
+  margin-bottom: 5px;
+}
+
+.categoryName {
+  font-size: 18px;
+  text-align: center;
+}
+@

@@ -1,0 +1,27 @@
+.available {
+  background-color: #4caf50; /* Green background for available items */
+  color: white;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+}
+
+.unavailable {
+  background-color: #f44336; /* Red background for unavailable items */
+  color: white;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+}
+.action:hover{
+  background-color: rgb(60, 142, 204);
+  border-radius: 100%;
+  color: white;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+}

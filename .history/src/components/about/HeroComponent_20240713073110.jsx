@@ -1,0 +1,16 @@
+// import img1 from '/public/dark-blue-abstract-background-minimalist-design-vector.jpg'
+import styles from './HeroComponent.module.css'
+function HeroComponent() {
+  // Inline CSS styles
+
+  return (
+    <div style={styles.container}>
+      <div style={styles.mainText}>Be</div>
+      <p style={styles.subText}>
+        Folakits is the WordPress theme that <br/> makes building website much easier.
+      </p>
+    </div>
+  );
+}
+
+export default HeroComponent;

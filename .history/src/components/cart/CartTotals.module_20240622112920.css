@@ -1,0 +1,46 @@
+/* CartTotals.module.css */
+
+.cartTotals {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.subtotal {
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.totals{
+  
+}
+.total {
+  font-weight: bold;
+  color: #007bff; /* Customize the color as desired */
+}
+.subtotal,
+.discount,
+.tax,
+.shipping,
+.total {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.discount {
+  color: #e74c3c; /* Customize the color for discounts */
+}
+
+.tax {
+  color: #27ae60; /* Customize the color for taxes */
+}
+
+.shipping {
+  color: #3498db; /* Customize the color for shipping */
+}
+
+.total {
+  font-size: 18px; /* Increase font size for the total amount */
+}

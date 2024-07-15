@@ -1,0 +1,46 @@
+import React from 'react'
+import styles from './NewProduct.module.css'
+import { TextField } from '@mui/material';
+function NewProduct() {
+  return (
+    <div className={styles.container}>
+      <h6>Add New Product</h6>
+      <hr />
+      <section>
+        <div>
+          <TextField
+            id="outlined-basic"
+            label="Name"
+            fullWidth
+            variant="outlined"
+            helperText="hsjs"
+          />
+          <TextField
+            id="outlined-multiline-flexible"
+            label="Description"
+            multiline
+            fullWidth
+            maxRows={5}
+            helperText="hsjs"
+          />
+          <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="Age"
+          onChange={handleChange}
+        >
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default NewProduct

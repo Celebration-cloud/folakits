@@ -1,0 +1,196 @@
+import React from 'react'
+import styles from './NewProduct.module.css'
+import { FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import FileUploader from './FileUploader';
+import { useForm } from 'react-hook-form';
+function NewProduct() {
+  const {register, watch, handleSubmit, formState: {errors}} = useForm({
+    mode: 'onChange',
+
+  })
+  console.log(errors)
+  const error = {
+    name: {
+      required: "Name is required",
+      minLength: {
+        value: 3,
+        message: "Name must be at least 3 characters long",
+      },
+      maxLength: {
+        value: 20,
+        message: "Name must be at most 20 characters long",
+      },
+    },
+    description: {
+      required: "Description is required",
+      minLength: {
+        value: 3,
+        message: "Description must be at least 3 characters  long",
+      },
+      maxLength: {
+        value: 100,
+        message: "Description must be at most 100 characters long",
+      },
+    },
+    
+    category: {
+      required: "Category is required",
+      },
+    brand: {
+      required: "brand is required",
+      minLength: {
+        value: 3,
+        message: "brand must be at least 3 characters long",
+      },
+      maxLength: {
+        value: 20,
+        message: "brand must be at most 20 characters long",
+      },
+    },
+    price: {
+      required: "Price is required",
+      minLength: {
+        value: 3,
+        message: "Price must be at least 3 quantity long",
+      },
+      maxLength: {
+        value: 20,
+        message: "Price must be at most 20 quantity long",
+      },
+    },
+    quantity: {
+      required: "quantity is required",
+      minLength: {
+        value: 3,
+        message: "quantity must be at least 3 quantity long",
+      },
+      maxLength: {
+        value: 20,
+        message: "quantity must be at most 20 quantity long",
+      },
+    },
+
+  };
+  function onSubmit(data){
+    console.log(data)
+  }
+  return (
+    <div className={styles.container}>
+      <h6>Add New Product</h6>
+      <hr />
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <section className={styles.formInput}>
+          <div className={styles.part1}>
+            <TextField
+              id="outlined-basic"
+              label="Name"
+              {...register("name", {
+                required: error.name.required,
+                maxLength: error.name.maxLength,
+                minLength: error.name.minLength,
+              })}
+              fullWidth
+              error={errors.name}
+              variant="outlined"
+              helperText={
+                errors.name && <p role="alert">{errors.name.message}</p>
+              }
+            />
+            <TextField
+              id="outlined-multiline-flexible"
+              label="Description"
+              {...register("description", {
+                required: error.description.required,
+                maxLength: error.description.maxLength,
+                minLength: error.description.minLength,
+              })}
+              error={errors.description}
+              multiline
+              fullWidth
+              maxRows={5}
+              helperText={
+                errors.name && <p role="alert">{errors.description.message}</p>
+              }
+            />
+            <FormControl error={errors.category} fullWidth>
+              <InputLabel id="demo-simple-select-label">Category</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Category"
+                {...register("category", {
+                  required: error.category.required,
+                  maxLength: error.category.maxLength,
+                  minLength: error.category.minLength,
+                })}
+              >
+                <MenuItem value="Men's clothes">Men's clothes</MenuItem>
+                <MenuItem value="Women's clothes">Women's clothes</MenuItem>
+                <MenuItem value="Jewelry">Jewelry</MenuItem>
+              </Select>
+              {errors.name && (
+                <FormHelperText>
+                  <p role="alert">{errors.description.message}</p>
+                </FormHelperText>
+              )}
+            </FormControl>
+            <FileUploader />
+          </div>
+          <div className={styles.part2}>
+            <TextField
+              id="outlined-basic"
+              label="Brand"
+              error={errors.brand}
+              {...register("brand", {
+                required: error.brand.required,
+                maxLength: error.brand.maxLength,
+                minLength: error.brand.minLength,
+              })}
+              fullWidth
+              variant="outlined"
+              helperText={
+                errors.name && <p role="alert">{errors.brand.message}</p>
+              }
+            />
+            <TextField
+              id="outlined-basic"
+              label="Sale Price"
+              {...register("price", {
+                required: error.price.required,
+                maxLength: error.price.maxLength,
+                minLength: error.price.minLength,
+              })}
+              type="number"
+              fullWidth
+              variant="outlined"
+              helperText={
+                errors.name && <p role="alert">{errors.price.message}</p>
+              }
+            />
+            <TextField
+              id="outlined-basic"
+              label="Quantity"
+              {...register("quantity", {
+                required: error.quantity.required,
+                maxLength: error.quantity.maxLength,
+                minLength: error.quantity.minLength,
+              })}
+              type="number"
+              fullWidth
+              variant="outlined"
+              helperText={
+                errors.name && <p role="alert">{errors.quantity.message}</p>
+              }
+            />
+          </div>
+        </section>
+
+        <button type="submit" className="btn btn-primary">
+          Add Product
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default NewProduct

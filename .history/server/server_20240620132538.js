@@ -1,0 +1,12 @@
+
+const app = expres
+
+const port = process.env.PORT || 5000
+app.use(express.json())
+app.get("/", (req, res) => {
+    res.send({msg: "hello word"})
+})
+
+app.listen(port, () => {
+    console.log(`server running on port ${port}`)
+})

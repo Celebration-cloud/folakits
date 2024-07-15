@@ -1,0 +1,31 @@
+/* Equivalent CSS for the given styles object */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 50px;
+  background-color: #F5F5F5;
+}
+
+.column {
+  width: 100%; /* Adjust width as needed */
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 426px) {
+    .container{
+        display: block;
+    }
+}

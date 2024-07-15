@@ -1,0 +1,15 @@
+import styles from './Categories.module.css'
+function Categories(){
+    return (
+        <div>
+            <div>
+                
+            </div>
+            <ul>
+                
+            </ul>
+            <div></div>
+        </div>
+    )
+}
+export default Categories

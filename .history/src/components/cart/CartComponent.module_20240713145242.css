@@ -1,0 +1,42 @@
+/* Styles for the container */
+.container {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+/* Styles for the product section */
+.productSection {
+  width: 70%;
+  /* Add specific product section styling here */
+}
+
+/* Styles for the cart totals section */
+.cartTotalsSection {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+  top: 20%;
+  margin: 0;
+  position: sticky;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  /* Add specific cart totals section styling here */
+}
+
+/* Add more styles as needed */
+.sections {
+  display: inline-flex;
+  width: 100%;
+  gap: 20px;
+}
+@media (max-width: 873px) {
+    .sections
+}

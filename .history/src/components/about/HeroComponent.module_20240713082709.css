@@ -1,0 +1,33 @@
+/* Equivalent CSS for the given styles object */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px; /* Adjust height as needed */
+  color: #fff;
+  background-image: url('/public/dark-blue-abstract-background-minimalist-design-vector.jpg');
+  background-size: cover; /* Adjust background size as needed */
+  text-align: center;
+  padding: 20px;
+}
+
+.mainText {
+  font-size: 150px; /* Adjust font size as needed */
+  font-weight: bolder;
+  margin: 0 0 20px 0; /* Adjust spacing as needed */
+}
+
+.subText {
+  font-size: 30px; /* Adjust font size as needed */
+  margin: 0;
+  font-weight: bolder;
+}
+
+@media (max-width: 400px) {
+    .mainText{
+        font-size: 100px;
+    }
+    
+}

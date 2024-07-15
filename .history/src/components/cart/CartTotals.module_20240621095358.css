@@ -1,0 +1,19 @@
+/* CartTotals.module.css */
+
+.cartTotals {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: right;
+}
+
+.subtotal {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.total {
+  font-weight: bold;
+  color: #007bff; /* Customize the color as desired */
+}

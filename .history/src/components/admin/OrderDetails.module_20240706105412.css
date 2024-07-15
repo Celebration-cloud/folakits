@@ -1,0 +1,23 @@
+.details{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    min-width: 800px;
+}
+.orderInfo{
+    display: inline-flex;
+    justify-content: space-between;
+}
+.address{
+    display: inline-flex;
+    justify-content: space-between;
+}
+.totalSection{
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+.header{
+    background-color: aliceblue;
+}

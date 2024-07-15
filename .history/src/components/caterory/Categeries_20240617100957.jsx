@@ -1,0 +1,45 @@
+import More from '../reuseable/more/More'
+import styles from './Categories.module.css'
+import WishList from '../reuseable/wishList/WishList' 
+import CartBadge from '../reuseable/cartBadge/CartBadge' 
+import useWidthSize from "../reuseable/width/useWidthSize";
+import Input from '../reuseable/input/Input'
+function Categories(){
+  const {width} = useWidthSize()
+    return (
+      <div className={styles.categories}>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBackdrop"
+          aria-controls="offcanvasWithBackdrop"
+          className={styles.menu}
+        >
+          <i className="fa-solid fa-bars fa-xl"></i>
+          {width > 770 && <span>All Categories</span>}
+        </button>
+        {width > 880 ? (
+          <ul className={styles.ul}>
+            <li>Shop</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>
+              <More />
+            </li>
+          </ul>
+        ) : (
+          <div>
+            <Input />
+          </div>
+        )}
+
+        <div className={styles.outlet}>
+          <i className="fa-solid fa-right-to-bracket"></i>
+          <WishList />
+          <CartBadge />
+        </div>
+      </div>
+    );
+}
+export default Categories
