@@ -1,0 +1,16 @@
+.first-content{
+    display: inline-flex;
+    flex-direction: column;
+    padding: 30px 50px 30px 50px;
+    position: relative;
+}
+.specials{
+    display: inline-flex;
+    gap: 50px;
+}
+.image{
+    posi
+}
+.offers{
+
+}

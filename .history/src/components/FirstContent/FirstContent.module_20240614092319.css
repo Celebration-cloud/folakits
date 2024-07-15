@@ -1,0 +1,9 @@
+.first-content{
+    display: inline-flex;
+    flex-direction: column;
+}
+.specials{
+    display: inline-flex;
+    justify-content: center;
+    gap: 50px;
+}

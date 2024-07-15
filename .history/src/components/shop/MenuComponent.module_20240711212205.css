@@ -1,0 +1,45 @@
+/* MenuComponent.module.css */
+
+.menu{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.categories{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+.category{
+    display: inline-flex;
+    padding: 5px;
+    border-radius: 5px;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+.category:hover{
+    background-color: antiquewhite;
+}
+.advert{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    background-color: antiquewhite;
+    align-items: center;
+    padding: 30px;
+}
+.cart{
+    display: inline-flex;
+    justify-content: center;
+    gap: 10px;
+    color: ;
+}

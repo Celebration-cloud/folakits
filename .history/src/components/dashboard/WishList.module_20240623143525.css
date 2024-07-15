@@ -1,0 +1,8 @@
+.wishItem{
+    display: inline-flex;
+    justify-content: space-between;
+}
+.img{
+    height: 50px;
+    width: ;
+}

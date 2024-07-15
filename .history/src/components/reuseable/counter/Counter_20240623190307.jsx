@@ -1,0 +1,29 @@
+import React, { useState } from 'react'
+import styles from 
+function Counter() {
+    const [count, setCount] = useState(2); // Initial count set to 2
+
+    const handleIncrement = () => {
+      setCount((prevCount) => prevCount + 1);
+    };
+
+    const handleDecrement = () => {
+      if (count > 0) {
+        // Prevents the count from going below 0
+        setCount((prevCount) => prevCount - 1);
+      }
+    };
+  return (
+    <div className={styles.counter}>
+      <button onClick={handleDecrement} className={styles.button}>
+        -
+      </button>
+      <span className={styles.value}>{count}</span>
+      <button onClick={handleIncrement} className={styles.button}>
+        +
+      </button>
+    </div>
+  );
+}
+
+export default Counter

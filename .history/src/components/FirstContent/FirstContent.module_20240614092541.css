@@ -1,0 +1,11 @@
+.first-content{
+    display: inline-flex;
+    flex-direction: column;
+    padding: 20px ;
+}
+.specials{
+    display: inline-flex;
+    justify-content: center;
+    gap: 50px;
+
+}

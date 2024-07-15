@@ -1,0 +1,22 @@
+.nav{
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 0px 10px;
+    gap: 50px;
+}
+.logo{
+    border-radius: 50%;
+    width: 25%;
+    height: 25%;
+}
+.searchCart{
+    justify-self: flex-start;
+    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+}
+.input{
+    width: 350px;
+}
+.sup

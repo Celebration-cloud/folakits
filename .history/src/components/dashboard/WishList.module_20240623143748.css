@@ -1,0 +1,13 @@
+.wishItem{
+    display: inline-flex;
+    justify-content: space-around;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.img{
+    width: 50%;
+    height: 50%;
+}
+.details{
+    width: 50%;
+}

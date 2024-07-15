@@ -1,0 +1,10 @@
+.content{
+    border-radius: 20px;
+    height: 500px;
+}
+.body{
+    width: 100%;
+}
+@media (max-width: 365px) {
+    .content{}
+}

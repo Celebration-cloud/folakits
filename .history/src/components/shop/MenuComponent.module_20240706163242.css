@@ -1,0 +1,7 @@
+/* MenuComponent.module.css */
+
+.menu{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+}

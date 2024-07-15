@@ -1,0 +1,9 @@
+import { applyMiddleware, compose, createStore } from "redux"
+
+
+const middlewares = []
+const enhancer = (process.env.NODE_ENV === "development"
+  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?? compose
+  : compose)(applyMiddleware(...middlewares))
+
+export default createStore(appReducers, enhancer)

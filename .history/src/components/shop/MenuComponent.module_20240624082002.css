@@ -1,0 +1,8 @@
+/* MenuComponent.module.css */
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.scroll::-webkit-scrollbar{
+    display: none;
+}

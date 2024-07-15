@@ -1,0 +1,28 @@
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border: 1px solid #ccc;
+  width: 10%;
+  height: 10%;
+  font-size: small;
+}
+
+.value {
+  margin: 0 15px;
+  font-size: 1.5rem;
+}
+
+.button {
+  p
+  padding: 5px 10px;
+  font-size: 100%;
+  cursor: pointer;
+  background-color: #f8f8f8;
+  color: black;
+}
+
+.button:hover {
+  border: none;
+}

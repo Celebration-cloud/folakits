@@ -1,0 +1,21 @@
+import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import Footer from "../footer/Footer";
+import Nav from "../nav/Nav";
+import CarouselImage from "./CarouselImage";
+import styles from "./Details.module.css";
+import { useState } from "react";
+import Counter from "../reuseable/counter/Counter";
+import Button from "../reuseable/button/Button";
+import Content from "./Content";
+function Details() {
+  return (
+    <div>
+      <Nav />
+      <Content styles={styles}/>
+      <hr/>
+      <Footer />
+    </div>
+  );
+}
+
+export default Details;

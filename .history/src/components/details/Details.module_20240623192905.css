@@ -1,0 +1,14 @@
+.content{
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.image{
+    al
+}
+.info{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}

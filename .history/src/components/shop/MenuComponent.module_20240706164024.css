@@ -1,0 +1,27 @@
+/* MenuComponent.module.css */
+
+.menu{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.categories{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+.category{
+    display: inline-flex;
+    gap: 20px;
+    align-items: center;
+}
+.advert{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

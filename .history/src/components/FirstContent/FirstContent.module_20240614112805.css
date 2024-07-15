@@ -1,0 +1,21 @@
+.first-content{
+    display: inline-flex;
+    flex-direction: column;
+    padding: 30px 50px 30px 50px;
+    position: relative;
+    top: 0;
+    
+}
+.specials{
+    display: inline-flex;
+    gap: 50px;
+}
+.image{
+    position: relative;
+    width: 60%;
+}
+.offers{
+    background-color: #3498db;
+    width: 40%;
+    border-radius: 20px;
+}

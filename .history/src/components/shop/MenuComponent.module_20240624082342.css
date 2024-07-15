@@ -1,0 +1,10 @@
+/* MenuComponent.module.css */
+
+.scroll::-webkit-scrollbar{
+    display: none;
+    -mscrollbar-width: none;
+}
+.scroll{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

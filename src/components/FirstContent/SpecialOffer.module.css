@@ -1,0 +1,9 @@
+.special{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}

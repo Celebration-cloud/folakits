@@ -1,0 +1,11 @@
+/* MenuComponent.module.css */
+
+.menu{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.categories{
+    list-style: none;
+    padding: 0;
+}

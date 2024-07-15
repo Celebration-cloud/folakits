@@ -1,0 +1,29 @@
+/* Menu Styles */
+
+/* Base menu container */
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual menu items */
+.menuItem {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Highlight active menu item */
+.menuItem.active {
+  background-color: #ddd;
+}
+
+/* Content container */
+.content {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

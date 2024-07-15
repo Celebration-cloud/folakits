@@ -1,0 +1,11 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pa
+}
+.logo{
+    border-radius: 50%;
+    width: 25%;
+    height: 25%;
+}
