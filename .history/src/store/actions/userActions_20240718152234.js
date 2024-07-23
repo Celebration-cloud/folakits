@@ -1,0 +1,132 @@
+import { toaster } from "evergreen-ui";
+import { ActionTypes } from "."
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth, db, storage } from "../../../server/firebase/firebaseConfig";
+import { v6 as uuid } from "uuid";
+import { arrayUnion, collection, doc, onSnapshot, query, setDoc, updateDoc, where } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { useSelector } from "react-redux";
+
+export const signUpUser= (userData, handleChainLogin) => async (dispatch, getState) => {
+    try {
+      const storageRef = ref(storage, `users/${userData.user_name}`);
+      const file = userData.profile_picture[0];
+      // 'file' comes from the Blob or File API
+      await uploadBytes(storageRef, file)
+      const imageURL = await getDownloadURL(storageRef);
+      const createUser = await createUserWithEmailAndPassword(
+        auth,
+        userData.email,
+        userData.password
+      );
+      const user = createUser.user;
+      const data = {
+        id: uuid(),
+        user_name: userData.user_name,
+        email: userData.email,
+        password: userData.password,
+        phone_number: Number(parseInt(userData.phone)),
+        profile_picture: imageURL,
+        wishlist: [],
+        cart: [],
+        orders: [],
+        address: [],
+      };
+      
+      await setDoc(doc(db, "users", data.user_name), data);
+      
+      // dispatch({ type: ActionTypes.GET_USERS, payload: user });
+      toaster.success("successfully registered")
+      handleChainLogin();
+      const currentState = getState();
+      console.log("Current state:", currentState, userData);
+    } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(error)
+         toaster.danger( errorCode, errorMessage )
+    }
+}
+
+export const loginUser = (userData, setLogged) => async (dispatch, getState) => {
+  try {
+    const user = await signInWithEmailAndPassword(
+      auth,
+      userData.email,
+      userData.password
+    );
+
+    const users = user.user;
+    dispatch({ type: ActionTypes.GET_SESSION, payload: users });
+    const currentState = getState();
+    console.log("Current state:", currentState, userData);
+    toaster.success("Logged in Successfully")
+    setLogged(true);
+  } catch (error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(error);
+    toaster.danger(errorCode, errorMessage);
+  }
+};
+
+export const userWishlist= (userData, username) => async (dispatch, getState) => {
+  console.log(username, userData)
+  const updateRef = doc(db, "users", username);
+    try {
+        await updateDoc(updateRef, {
+          wishlist: userData,
+        });
+        const currentState = getState();
+        console.log("Current state:", currentState, userData);
+        toaster.success("Added to wishlist");
+    } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(error);
+      toaster.danger(errorCode, errorMessage);
+    }
+}
+
+export const getUerItem= () => async (dispatch, getState) => {
+    const { session } = useSelector((state) => state.user);
+  const userCollectionRef = query(
+    collection(db, "users"),
+    where("email", "==", session && session?.email)
+  );
+    try {
+        const unsubscribeSnapshot = onSnapshot(
+          userCollectionRef,
+          (querySnapshot) => {
+            const newData = querySnapshot.docs.map((doc) => doc.data());
+
+            // Dispatch actions
+            dispatch({ type: ActionTypes.GET_USERS, payload: newData });
+            dispatch({
+              type: ActionTypes.GET_CART,
+              payload: newData?.cart || [],
+            });
+            dispatch({
+              type: ActionTypes.GET_WISHLIST,
+              payload: newData?.WishList || [],
+            });
+            dispatch({
+              type: ActionTypes.GET_ADDRESS,
+              payload: newData?.address || [],
+            });
+            dispatch({
+              type: ActionTypes.GET_ORDERS,
+              payload: newData?.orders || [],
+            });
+          }
+        );
+      } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(error.message);
+        toaster.danger(errorCode, errorMessage);
+      }
+      return () => {
+        unsubscribeSnapshot();
+      };
+    }

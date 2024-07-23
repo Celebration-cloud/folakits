@@ -1,0 +1,65 @@
+import React from "react";
+import styles from "./Carousel.module.css"; // Make sure to import your CSS module
+import caro from "/public/R.jpg"; // Replace with the actual image path
+import Button from "../reuseable/button/Button";
+import { useSelector } from "react-redux";
+
+function Carousel() {
+  const { advert } = useSelector((state) => state.product);
+
+  return (
+    <div
+      id="carouselExampleCaptions"
+      className={`${styles.body} carousel slide`}
+      data-bs-ride="carousel"
+    >
+      <div className="carousel-indicators">
+        {advert?.map((item, idx) => (
+          <button
+            type="button"
+            key={idx}
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to={idx.toString()} // Use the index as a string
+            className={idx === 0 ? "active" : ""} // Set the active class conditionally
+            aria-current={idx === 0 ? "true" : "false"} // Set aria-current conditionally
+            aria-label={`Slide ${idx + 1}`}
+          ></button>
+        ))}
+      </div>
+      <div className={`${styles.content} carousel-inner`}>
+        {advert?.map((item, idx) => (
+          <div
+            key={idx}
+            className={`carousel-item ${idx === 0 ? "active" : ""}`}
+          >
+            <img src={item} className="d-block w-100" alt="Product" />
+            <div
+              style={{
+                position: "absolute",
+                zIndex: 30,
+                top: "0",
+                padding: "20px",
+                marginTop: "100px",
+                color: "white",
+                display: "inline-flex",
+                flexDirection: "column",
+                gap: "30px",
+              }}
+            >
+              <h1>Our Orange Collection</h1>
+              <p>
+                Our casual collection. Pellentesque netus aliquet dictum curae.
+                Buy now from our orange collection.
+              </p>
+              <span style={{ zIndex: 0, position: "relative" }}>
+                <Button name="Shop Now" />
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Carousel;

@@ -1,0 +1,12 @@
+export const GET_PRODUCTS = "GET_PRODUCTS"
+export const GET_PRODUCT_DETAILS = "GET_PRODUCT_DETAILS"
+export const GET_ERROR = "GET_ERROR"
+export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT"
+export const DELETE_PRODUCT = "DELETE_PRODUCT"
+
+export const GET_USERS = "GET_USERS"
+export const GET_WISHLIST = "GET_WISHLIST"
+export const GET_ORDERS = "GET_ORDERS"
+export const GET_CART = "GET_CART"
+export const GET_ADDRESS = "GET_ADDRESS"
+export const GET_SE = "GET_SE"

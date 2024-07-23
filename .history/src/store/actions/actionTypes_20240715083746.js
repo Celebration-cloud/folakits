@@ -1,0 +1,7 @@
+export const GET_PRODUCTS = "GET_PRODUCTS"
+export const GET_PRODUCT_DETAILS = "GET_PRODUCT_DETAILS"
+export const GET_ERROR = "GET_ERROR"
+export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT"
+export const DELETE_PRODUCT = "DELETE_PRODUCT"
+
+export const GET_USERS = "GET"

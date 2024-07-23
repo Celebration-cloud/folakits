@@ -1,4 +1,0 @@
-function Categories(){
-
-}
-export default

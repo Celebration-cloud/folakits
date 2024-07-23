@@ -1,0 +1,35 @@
+.content{
+    border-radius: 20px;
+    height: 500px;
+}
+/* Add this CSS to your stylesheet */
+.caro-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  z-index: 1; 
+}
+/* Add this CSS to your stylesheet */
+.carousel-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  z-index: 1; /* Ensure it's above the image */
+}
+
+.body{
+    width: 100%;
+}
+@media (max-width: 365px) {
+    .content{
+        height: 100%;
+        font-size: small;
+    }
+}

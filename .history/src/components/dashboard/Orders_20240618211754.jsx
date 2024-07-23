@@ -1,1 +1,0 @@
- using react js and inline css.

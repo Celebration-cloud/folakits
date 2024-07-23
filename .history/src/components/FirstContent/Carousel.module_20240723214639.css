@@ -1,0 +1,15 @@
+.content{
+    border-radius: 20px;
+    height: 500px;
+    backdrop-filter: ;
+    -web
+}
+.body{
+    width: 100%;
+}
+@media (max-width: 365px) {
+    .content{
+        height: 100%;
+        font-size: small;
+    }
+}

@@ -1,0 +1,28 @@
+import { toaster } from "evergreen-ui";
+import { ActionTypes } from "."
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../server/firebase/firebaseConfig";
+import { v6 as uuid } from "uuid";
+export const signUpUser= (userData) => async (dispatch, getState) => {
+    try {
+      const createUser = await createUserWithEmailAndPassword(
+        auth,
+        userData.email,
+        userData.password
+      );
+      const data = {
+        email: userData.email,
+        password: userData.password,
+        uid: uuid,
+      }
+      const user = createUser.user;
+      dispatch({ type: ActionTypes.GET_USERS, payload: user });
+
+      const currentState = getState();
+      console.log("Current state:", currentState, userData);
+    } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+         toaster.danger( errorCode, errorMessage )
+    }
+}
