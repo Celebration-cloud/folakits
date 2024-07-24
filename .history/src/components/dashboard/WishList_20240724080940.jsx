@@ -32,7 +32,7 @@ const WishList = ({ items, onRemoveItem }) => {
             </div>
             <div className={styles.details}>
               <h3>{item.product}</h3>
-              <p style={{ color: "red" }}>
+              <p style={{ color: "redni" }}>
                 {item.originalPrice} {item.originalPrice && `-`}&#x20A6;
                 {item.price.toFixed(2)}
               </p>
