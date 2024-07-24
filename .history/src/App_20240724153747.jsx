@@ -3,7 +3,7 @@ import { lazy, Suspense, useCallback, useEffect, useRef } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { ActionTypes } from "./store/actions";
-import { auth, db } from "./server/firebase/firebaseConfig";
+import { auth, db } from "./firebase/firebaseConfig";
 import NotFound from "./components/reuseable/notFound/NotFound";
 import Spinner from "./components/reuseable/spinner/Spinner";
 import { toaster } from "evergreen-ui";

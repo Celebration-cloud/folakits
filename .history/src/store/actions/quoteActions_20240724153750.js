@@ -7,7 +7,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { db } from "../../server/firebase/firebaseConfig";
+import { db } from "../../firebase/firebaseConfig";
 import { toaster } from "evergreen-ui";
 
 // EXAMPLE HOW TO USE ACTION

@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import FileUploaders from "./FileUploaders";
-import onSubmit, { error } from "../../server/firebase/NewProductServerside";
+import onSubmit, { error } from "../../firebase/NewProductServerside";
 import Spinner from "../reuseable/spinner/Spinner";
 function NewProduct() {
   const [files, setFiles] = useState(null);

@@ -12,7 +12,7 @@ import { toaster } from "evergreen-ui";
 import { collection, getDocs, Timestamp } from "firebase/firestore";
 import { v6 as uuid } from "uuid";
 import { userCartList, userOrders } from "../../store/actions/userActions";
-import { db } from "../../server/firebase/firebaseConfig";
+import { db } from "../../firebase/firebaseConfig";
 const CartComponent = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [orders, setOrders] = useState([]);

@@ -6,7 +6,7 @@ import styles from "./ProductList.module.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
-import { db, storage } from "../../server/firebase/firebaseConfig";
+import { db, storage } from "../../firebase/firebaseConfig";
 import {
   Box,
   Button,

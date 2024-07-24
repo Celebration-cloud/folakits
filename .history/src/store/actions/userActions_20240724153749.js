@@ -4,7 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { auth, db, storage } from "../../server/firebase/firebaseConfig";
+import { auth, db, storage } from "../../firebase/firebaseConfig";
 import { v6 as uuid } from "uuid";
 import {
   collection,
