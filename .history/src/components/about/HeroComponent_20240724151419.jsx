@@ -9,10 +9,8 @@ function HeroComponent() {
         Unleash Style with Folakits – Your Ultimate Fashion Destination
       </div>
       <p className={styles.subText}>
-        Discover elegance at your fingertips with Folakits’ exclusive range of
-        clothing, jewelry, and footwear. Transform your wardrobe with our trendy
-        collections designed to empower your personal style. Shop now and step
-        into a world where fashion meets convenience!
+        Folakits is the WordPress theme that <br /> makes building website much
+        easier.
       </p>
     </div>
   );

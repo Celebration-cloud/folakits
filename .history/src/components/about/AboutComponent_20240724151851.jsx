@@ -27,8 +27,10 @@ function AboutComponent() {
           everyday with pieces that are as unique as you are.
         </p>
         <ul className="list-disc pl-6 mt-4">
-          <li>Established in 2010 with family roots.</li>
-          <li>Commitment to genuine quality and customer delight.</li>
+          <li>Founded in 2010, Folakits started as a small family business.</li>
+          <li>
+            Our Values: Transparency, integrity, and customer satisfaction.
+          </li>
           <li>
             Our Mission: To enhance your life through innovative and reliable
             products.

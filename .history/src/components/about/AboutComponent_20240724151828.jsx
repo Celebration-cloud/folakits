@@ -19,16 +19,15 @@ function AboutComponent() {
       <div className={styles.column}>
         <div className={styles.heading}>About FolaKits</div>
         <p className="text-gray-600">
-          Discovering Folakits Welcome to Folakits – not just another e-commerce
-          platform but a vibrant community driven by a passion for fashion and
-          quality living. Since our inception in 2010 as a small family venture,
-          we’ve grown into a trusted name known for our commitment to
-          authenticity and customer satisfaction. Our mission: To infuse your
-          everyday with pieces that are as unique as you are.
+          At Folakits, we're more than just an online store. We're a community
+          of passionate individuals who believe in the power of great products.
+          Here's a glimpse into our story:
         </p>
         <ul className="list-disc pl-6 mt-4">
-          <li>Established in 2010 with family roots.</li>
-          <li>Commitment to genuine quality and customer delight.</li>
+          <li>Founded in 2010, Folakits started as a small family business.</li>
+          <li>
+            Our Values: Transparency, integrity, and customer satisfaction.
+          </li>
           <li>
             Our Mission: To enhance your life through innovative and reliable
             products.
