@@ -68,10 +68,6 @@ export default function ProductList() {
   const handleClose = () => {
     setOpen(false);
   };
-  
-  function handleEdit(id) {
-    console.log(id);
-  }
   React.useEffect(() => {
      const productCollectionRef = collection(db, "products");
 

@@ -67,7 +67,7 @@ export const loginUser = (userData, setLogged) => async (dispatch, getState) => 
 };
 
 export const userWishlist= (userData, username) => async (dispatch, getState) => {
-
+  console.log(username, userData)
   const updateRef = doc(db, "users", username);
   try {
         await updateDoc(updateRef, {
@@ -82,7 +82,7 @@ export const userWishlist= (userData, username) => async (dispatch, getState) =>
     }
 }
 export const userCartList= (userData, username) => async (dispatch, getState) => {
-
+  console.log(username, userData)
   const updateRef = doc(db, "users", username);
   try {
         await updateDoc(updateRef, {

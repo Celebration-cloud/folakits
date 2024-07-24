@@ -6,7 +6,7 @@ import { v6 as uuid } from "uuid";
 import { collection, deleteDoc, doc, getDoc, getDocs, onSnapshot, query, setDoc, updateDoc, where } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
-export const signUpUser= (userData) => async (dispatch, getState) => {
+export const signUpUser= (userData, handleChainLogin) => async (dispatch, getState) => {
     try {
       const storageRef = ref(storage, `users/${userData.user_name}`);
       const file = userData.profile_picture[0];
@@ -35,6 +35,7 @@ export const signUpUser= (userData) => async (dispatch, getState) => {
       
       // dispatch({ type: ActionTypes.GET_USERS, payload: user });
       toaster.success("successfully registered")
+      const currentState = getState();
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -54,6 +55,8 @@ export const loginUser = (userData, setLogged) => async (dispatch, getState) => 
 
     const users = user.user;
     dispatch({ type: ActionTypes.GET_SESSION, payload: users });
+    const currentState = getState();
+    console.log("Current state:", currentState, userData);
     toaster.success("Logged in Successfully")
     dispatch({ type: ActionTypes.GET_LOADING, payload: false });
     setLogged(true);
@@ -67,12 +70,14 @@ export const loginUser = (userData, setLogged) => async (dispatch, getState) => 
 };
 
 export const userWishlist= (userData, username) => async (dispatch, getState) => {
-
+  console.log(username, userData)
   const updateRef = doc(db, "users", username);
   try {
         await updateDoc(updateRef, {
           wishlist: userData,
         });
+        const currentState = getState();
+        console.log("Current state:", currentState, userData);
         
     } catch (error) {
       const errorCode = error.code;
@@ -82,12 +87,14 @@ export const userWishlist= (userData, username) => async (dispatch, getState) =>
     }
 }
 export const userCartList= (userData, username) => async (dispatch, getState) => {
-
+  console.log(username, userData)
   const updateRef = doc(db, "users", username);
   try {
         await updateDoc(updateRef, {
           cart: userData,
         });
+        const currentState = getState();
+        console.log("Current state:", currentState, userData);
         
     } catch (error) {
       const errorCode = error.code;
@@ -97,12 +104,14 @@ export const userCartList= (userData, username) => async (dispatch, getState) =>
     }
 }
 export const userAddress = (userData, username) => async (dispatch, getState) => {
-
+  console.log(username, userData)
   const updateRef = doc(db, "users", username);
   try {
         await updateDoc(updateRef, {
           address: userData,
         });
+        const currentState = getState();
+        console.log("Current state:", currentState, userData);
         
     } catch (error) {
       const errorCode = error.code;
@@ -112,7 +121,7 @@ export const userAddress = (userData, username) => async (dispatch, getState) =>
     }
 }
 export const userInfo = (userData, username) => async (dispatch, getState) => {
-
+  console.log(username, userData)
   if(username === userData.name) return;
   const updateRef = doc(db, "users", username);
   const newDocRef = doc(db, "users", userData.name);
@@ -134,6 +143,9 @@ export const userInfo = (userData, username) => async (dispatch, getState) => {
           console.log("No such document!");
         }
 
+        const currentState = getState();
+         toaster.success("Updated User");
+        console.log("Current state:", currentState, userData,);
         
     } catch (error) {
       const errorCode = error.code;
@@ -144,11 +156,13 @@ export const userInfo = (userData, username) => async (dispatch, getState) => {
 }
 
 export const userOrders = (userData, username) => async (dispatch, getState) => {
-
+    console.log(username, userData);
     const updateRef = doc(db, "orders", userData.orderId);
    
     try {
         await setDoc(updateRef, userData);
+      const currentState = getState();
+      console.log("Current state:", currentState, userData);
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;

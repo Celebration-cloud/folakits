@@ -61,6 +61,7 @@ const UserDashboard = ({name}) => {
     }
   }, [name]);
 
+  console.log(ordersItem)
   const orders = ordersItem
  
   const handleUpdateUser = (updatedUser) => {

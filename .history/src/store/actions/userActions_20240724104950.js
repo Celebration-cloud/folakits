@@ -67,7 +67,7 @@ export const loginUser = (userData, setLogged) => async (dispatch, getState) => 
 };
 
 export const userWishlist= (userData, username) => async (dispatch, getState) => {
-
+  console.log(username, userData)
   const updateRef = doc(db, "users", username);
   try {
         await updateDoc(updateRef, {
@@ -82,12 +82,14 @@ export const userWishlist= (userData, username) => async (dispatch, getState) =>
     }
 }
 export const userCartList= (userData, username) => async (dispatch, getState) => {
-
+  console.log(username, userData)
   const updateRef = doc(db, "users", username);
   try {
         await updateDoc(updateRef, {
           cart: userData,
         });
+        const currentState = getState();
+        console.log("Current state:", currentState, userData);
         
     } catch (error) {
       const errorCode = error.code;
@@ -97,12 +99,14 @@ export const userCartList= (userData, username) => async (dispatch, getState) =>
     }
 }
 export const userAddress = (userData, username) => async (dispatch, getState) => {
-
+  console.log(username, userData)
   const updateRef = doc(db, "users", username);
   try {
         await updateDoc(updateRef, {
           address: userData,
         });
+        const currentState = getState();
+        console.log("Current state:", currentState, userData);
         
     } catch (error) {
       const errorCode = error.code;
@@ -144,7 +148,7 @@ export const userInfo = (userData, username) => async (dispatch, getState) => {
 }
 
 export const userOrders = (userData, username) => async (dispatch, getState) => {
-
+    console.log(username, userData);
     const updateRef = doc(db, "orders", userData.orderId);
    
     try {
