@@ -61,7 +61,7 @@ const WishList = ({ items, onRemoveItem }) => {
             </div>
           </div>
         ))}
-      {items && items.length < 1 && <p>Your wishlist is empty.</p>}
+      {items && items.length < 0 && <p>Your wishlist is empty.</p>}
     </div>
   );
 };

@@ -76,9 +76,7 @@ function Categories(){
           )}
           {window.location.pathname !== "/log" &&
             window.location.pathname !== "/log/wishlist" &&
-            window.location.pathname !== "/log/settings" &&
-            window.location.pathname !== "/log/orders" &&
-            window.location.pathname !== "/log/address" && (
+            window.location.pathname !== "/log" && (
               <Link to="/log/wishlist" style={{ color: "black" }}>
                 <WishList />
               </Link>

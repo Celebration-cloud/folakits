@@ -74,15 +74,10 @@ function Categories(){
               )}
             </Link>
           )}
-          {window.location.pathname !== "/log" &&
-            window.location.pathname !== "/log/wishlist" &&
-            window.location.pathname !== "/log/settings" &&
-            window.location.pathname !== "/log/orders" &&
-            window.location.pathname !== "/log/address" && (
-              <Link to="/log/wishlist" style={{ color: "black" }}>
-                <WishList />
-              </Link>
-            )}
+          {window.location.pathname !== "/log/wishlist" && }
+          <Link to="/log/wishlist" style={{ color: "black" }}>
+            <WishList />
+          </Link>
           <Link to="/cart" style={{ color: "black" }}>
             <CartBadge />
           </Link>

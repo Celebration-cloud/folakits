@@ -32,9 +32,7 @@ function Categories(){
         {width > 880 ? (
           <ul className={styles.ul}>
             <li>
-              <NavLink to={`/${shop}`} onClick={() => dispatch(getItems())}>
-                Shop
-              </NavLink>
+              <NavLink to={`/${shop}`} onClick={() => dispatch(getItems())}>Shop</NavLink>
             </li>
             <li>
               <NavLink to="/about">About</NavLink>
@@ -57,16 +55,17 @@ function Categories(){
             <Link
               to="/log"
               onClick={() => {
-                navigate("/log");
+                navigate("/log")
               }}
               style={{ color: "black" }}
             >
-              {session && userData ? (
+              {session && userData? (
+                
                 <img
                   src={userData[0]?.profile_picture}
                   width={50}
                   height={50}
-                  style={{ borderRadius: "50%" }}
+                  style={{borderRadius: "50%"}}
                   alt=""
                 />
               ) : (
@@ -74,15 +73,10 @@ function Categories(){
               )}
             </Link>
           )}
-          {window.location.pathname !== "/log" &&
-            window.location.pathname !== "/log/wishlist" &&
-            window.location.pathname !== "/log/settings" &&
-            window.location.pathname !== "/log/orders" &&
-            window.location.pathname !== "/log/address" && (
-              <Link to="/log/wishlist" style={{ color: "black" }}>
-                <WishList />
-              </Link>
-            )}
+          {window.}
+          <Link to="/log/wishlist" style={{ color: "black" }}>
+            <WishList />
+          </Link>
           <Link to="/cart" style={{ color: "black" }}>
             <CartBadge />
           </Link>
