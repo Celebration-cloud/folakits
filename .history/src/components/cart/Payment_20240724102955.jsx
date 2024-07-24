@@ -1,4 +1,5 @@
 import { toaster } from 'evergreen-ui';
+import React from 'react'
 
 function Payment() {
     const handleCopyClick = async () => {

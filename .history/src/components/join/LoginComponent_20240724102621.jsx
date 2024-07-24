@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
+import { toaster } from "evergreen-ui";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { loginUser } from "../../store/actions/userActions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function LoginComponent({ handleChain, handleChainSignUp, setLogged }) {
   const {
@@ -12,7 +14,7 @@ function LoginComponent({ handleChain, handleChainSignUp, setLogged }) {
     formState: { errors },
   } = useForm();
   const dispatch = useDispatch();
-  // const { loading } = useSelector(state => state.user)
+  const { loading } = useSelector(state => state.user)
   //   const handleLogin = async (e) => {
   //   e.preventDefault();
   //   try {
@@ -28,6 +30,7 @@ function LoginComponent({ handleChain, handleChainSignUp, setLogged }) {
   // };
   const onSubmit = (data) => {
       dispatch(loginUser(data, setLogged));
+      console.log(data);
       reset();
   };
   return (
@@ -105,7 +108,7 @@ function LoginComponent({ handleChain, handleChainSignUp, setLogged }) {
                     className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                     type="submit"
                   >
-                    Login to your Account
+                    {Login to your Account}
                   </button>
                 </div>
               </div>

@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { signUpUser } from "../../store/actions/userActions";
 import { useEffect } from "react";
+import { toaster } from "evergreen-ui";
 import Loading from "../reuseable/loading/Loading";
 
 const error = {

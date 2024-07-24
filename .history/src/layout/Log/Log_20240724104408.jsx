@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Footer from '../../components/footer/Footer';
 import LoginComponent from '../../components/join/LoginComponent';
 import Nav from '../../components/nav/Nav'

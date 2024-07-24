@@ -71,7 +71,8 @@ const CartComponent = () => {
    function handleQuantityChange(carts){
 
    }
-
+  
+console.log(subtotal, overallSum)
     
   return (
     <div className={styles.container}>

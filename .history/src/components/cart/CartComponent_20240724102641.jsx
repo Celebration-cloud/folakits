@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import StepIndicator from "./StepIndicator";
 import ProductItem from "./ProductItem";
 import CartTotals from "./CartTotals";
@@ -25,7 +25,7 @@ const CartComponent = () => {
            return item.price * item.amount;
          });
          const overallSum = subtotal?.reduce((sum, item) => sum + item, 0);
-    
+        console.log(cartListRef.current)
         const cartTotalsData = {
           subtotal: overallSum, // Example subtotal
           shipping: 10, // Example shipping cost
@@ -39,7 +39,7 @@ const CartComponent = () => {
             const ordersData = ordersSnapshot.docs.map((doc) => doc.data());
             setOrders(ordersData);
           } catch (error) {
-            console.log(error.message);
+            console.error("Error fetching orders:", error);
           }
         };
 
@@ -47,6 +47,8 @@ const CartComponent = () => {
       }, []);
 
     // Function to proceed to the next step
+    console.log(Timestamp.now());
+    console.log(orders)
     const goToNextStep = () => {
       if(currentStep <3) {
 
@@ -68,10 +70,10 @@ const CartComponent = () => {
         toaster.success("Order made")
       }
     };
-   function handleQuantityChange(carts){
-
-   }
-
+  //  function handleQuantityChange(carts){
+  //  }
+  
+console.log(subtotal, overallSum)
     
   return (
     <div className={styles.container}>

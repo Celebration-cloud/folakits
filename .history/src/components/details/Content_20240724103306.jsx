@@ -99,6 +99,7 @@ function handleWish(item) {
   const exist = wishlistRef.current?.find(
     (item) => item.id === productDetails[0]?.id
   ); 
+  console.log( count, exist);
   return (
     <div className={styles.content}>
       {productDetails?.map((item) => (

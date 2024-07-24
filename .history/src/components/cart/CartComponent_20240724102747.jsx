@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import StepIndicator from "./StepIndicator";
 import ProductItem from "./ProductItem";
 import CartTotals from "./CartTotals";
@@ -25,7 +25,7 @@ const CartComponent = () => {
            return item.price * item.amount;
          });
          const overallSum = subtotal?.reduce((sum, item) => sum + item, 0);
-    
+        console.log(cartListRef.current)
         const cartTotalsData = {
           subtotal: overallSum, // Example subtotal
           shipping: 10, // Example shipping cost
@@ -71,7 +71,8 @@ const CartComponent = () => {
    function handleQuantityChange(carts){
 
    }
-
+  
+console.log(subtotal, overallSum)
     
   return (
     <div className={styles.container}>

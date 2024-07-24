@@ -8,7 +8,7 @@ import Service from '../../components/offers/Service';
 // import Promotions from '../../components/promotions/Promotions';
 import MobileNav from '../../components/reuseable/mobileNav/MobileNav';
 import useWidthSize from '../../components/reuseable/width/useWidthSize';
-// import styles from './Folakits.module.css'
+import styles from './Folakits.module.css'
 import { receiveItem } from '../../store/actions/quoteActions';
 import { useEffect } from 'react';
 function Folakits() {

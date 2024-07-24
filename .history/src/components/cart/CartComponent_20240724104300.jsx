@@ -71,7 +71,7 @@ const CartComponent = () => {
    function handleQuantityChange(carts){
 
    }
-
+  
     
   return (
     <div className={styles.container}>

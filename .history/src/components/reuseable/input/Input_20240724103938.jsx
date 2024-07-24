@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./Input.module.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -10,6 +10,7 @@ function Input() {
   function handleSearch(e) {
     setCheck(e.target.value);
   }
+  console.log(check);
   function search(e) {
      e.preventDefault();
      navigate(`/${check}`);

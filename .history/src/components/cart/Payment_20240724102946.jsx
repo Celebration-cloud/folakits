@@ -1,4 +1,5 @@
 import { toaster } from 'evergreen-ui';
+import React from 'react'
 
 function Payment() {
     const handleCopyClick = async () => {
@@ -11,7 +12,6 @@ function Payment() {
           // You can also show a success message to the user if needed.
         }
       } catch (error) {
-        console.error("Error copying account number:", error);
         // Handle any errors (e.g., browser doesn't support clipboard API).
         toaster.warning("Error copying account number");
       }

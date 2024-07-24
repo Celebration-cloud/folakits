@@ -12,7 +12,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import SettingsIcon from "@mui/icons-material/Settings";
 import MapIcon from "@mui/icons-material/Map";
 import { toaster } from "evergreen-ui";
-import { auth } from "../../../server/firebase/firebaseConfig";
+import { auth, db } from "../../../server/firebase/firebaseConfig";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
 import { userCartList, userInfo,  userOrdersItems,  userWishlist } from "../../store/actions/userActions";

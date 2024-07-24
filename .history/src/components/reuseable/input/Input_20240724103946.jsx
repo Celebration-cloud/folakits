@@ -10,6 +10,7 @@ function Input() {
   function handleSearch(e) {
     setCheck(e.target.value);
   }
+  console.log(check);
   function search(e) {
      e.preventDefault();
      navigate(`/${check}`);
