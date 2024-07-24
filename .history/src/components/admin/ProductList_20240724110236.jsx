@@ -69,10 +69,7 @@ export default function ProductList() {
   const handleClose = () => {
     setOpen(false);
   };
-  
-  function handleEdit(id) {
-    console.log(id);
-  }
+ 
   React.useEffect(() => {
      const productCollectionRef = collection(db, "products");
 
@@ -118,6 +115,7 @@ export default function ProductList() {
   }
 
 
+  console.log(dataSet)
 
   const columns = [
     { field: "id", headerName: "ID", width: 150 },

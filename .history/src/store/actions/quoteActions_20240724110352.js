@@ -13,6 +13,8 @@ export const receiveItem= () => async (dispatch, getState) => {
        dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
      });
 
+     const currentState = getState();
+
      return () => {
        unsubscribe();
      };
@@ -31,6 +33,8 @@ export const getItems = () => async (dispatch, getState) => {
       const newData = querySnapshot.docs.map((doc) => ({ ...doc.data() }));
       dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
     });
+    const currentState = getState();
+    console.log("Current state:", currentState);
     return () => {
       unsubscribe()
     }

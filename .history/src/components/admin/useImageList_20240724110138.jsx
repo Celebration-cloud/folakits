@@ -1,0 +1,20 @@
+import React, { useEffect } from 'react'
+import { storage } from '../../../server/firebase/firebaseConfig';
+
+function useImageList({name}) {
+    const [images, setImages] = React.useState([])
+    const storageRef = ref(storage, `products/${data.name}`);
+    useEffect(() => {
+        listAll(storageRef).then((res) => {
+          res.items.map((item) => {
+            getDownloadURL(item).then((downloadURL) => {
+              setImages((prev) => [...prev, downloadURL]);
+            });
+          });
+        });
+    }, [])
+    
+  return {}
+}
+
+export default useImageList

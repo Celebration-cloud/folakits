@@ -118,6 +118,7 @@ export default function ProductList() {
   }
 
 
+  console.log(dataSet)
 
   const columns = [
     { field: "id", headerName: "ID", width: 150 },

@@ -13,6 +13,8 @@ export const receiveItem= () => async (dispatch, getState) => {
        dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
      });
 
+     const currentState = getState();
+
      return () => {
        unsubscribe();
      };

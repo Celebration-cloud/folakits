@@ -128,6 +128,7 @@ export const userInfo = (userData, username) => async (dispatch, getState) => {
           
           // Delete the old document
           await deleteDoc(updateRef);
+          console.log("Old document deleted.");
         } else {
           console.log("No such document!");
         }
