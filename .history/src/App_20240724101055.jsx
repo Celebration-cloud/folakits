@@ -8,7 +8,7 @@ import NotFound from "./components/reuseable/notFound/NotFound";
 import Spinner from "./components/reuseable/spinner/Spinner";
 import { toaster } from "evergreen-ui";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
-import { getAdvert, getCategoryItems, getItems, searchItem } from "./store/actions/quoteActions";
+import { getAdvert, getCategoryItems, getItems, receiveItem, searchItem } from "./store/actions/quoteActions";
 
 // Lazy load all components
 const AdminDashboard = lazy(() => import('./layout/AdminDashboard/AdminDashboard'))
