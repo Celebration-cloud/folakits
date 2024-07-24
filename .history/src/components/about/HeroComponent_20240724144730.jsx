@@ -5,7 +5,7 @@ function HeroComponent() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.mainText}>Folakits</div>
+      <div className={styles.mainText}>Folakit</div>
       <p className={styles.subText}>
         Folakits is the WordPress theme that <br/> makes building website much easier.
       </p>

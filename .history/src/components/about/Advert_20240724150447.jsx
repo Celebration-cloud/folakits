@@ -30,9 +30,8 @@ function Advert() {
     <div style={styles.container}>
       <h1 style={styles.heading}>Discover Style & Elegance</h1>
       <p style={styles.text}>
-        Your One-Stop Shop for Fashion Essentials! At Folakits, we bring you an
-        exquisite collection of clothing, jewelry, and footwear crafted to
-        perfection. Elevate your wardrobe with our premium selections today!
+        Our builder is top quality theme editor that helps you to make eCommerce
+        website.
       </p>
     </div>
   );

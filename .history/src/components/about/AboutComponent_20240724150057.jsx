@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import styles from './AboutComponent.module.css'
 function AboutComponent() {
   // Inline CSS styles
@@ -7,7 +6,7 @@ function AboutComponent() {
     <div className={styles.container}>
       <div className={styles.column}>
         <div className={styles.heading}>Our product for you</div>
-        <p className="text-gray-600">
+        <p className={styles.text}>
           Discover a world of exceptional products at Folakits. We curate each
           item with care, ensuring quality, style, and functionality. From
           trendy fashion to cutting-edge gadgets, our collection caters to your

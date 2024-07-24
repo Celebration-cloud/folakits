@@ -80,8 +80,8 @@ function Service() {
           <img src={img3} width={170} alt="" />
           <h6>50 day return</h6>
           <p>
-            Shop confidently knowing you have 50 days to return your items
-            hassle-free for full refunds or exchanges.
+            Vitae adipiscing tu enean ligula nibhmolestie id viverra dapilo
+            eleifend
           </p>
         </section>
       </article>

@@ -64,8 +64,8 @@ function Service() {
           <img src={img2} width={180} alt="" />
           <h6>Free delivery</h6>
           <p>
-            We deliver your purchases right to your doorstep at no extra cost.
-            Shop more, worry less!
+            Vitae adipiscing tu enean ligula nibhmolestie id viverra dapilo
+            eleifend
           </p>
         </section>
         <section
@@ -80,8 +80,8 @@ function Service() {
           <img src={img3} width={170} alt="" />
           <h6>50 day return</h6>
           <p>
-            Shop confidently knowing you have 50 days to return your items
-            hassle-free for full refunds or exchanges.
+            Vitae adipiscing tu enean ligula nibhmolestie id viverra dapilo
+            eleifend
           </p>
         </section>
       </article>

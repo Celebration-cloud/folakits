@@ -38,7 +38,7 @@ function NewsLetter() {
       <section style={content}>
         <h2 style={{ textAlign: "center", fontSize: "140%" }}>
           Stay Connected with Folakits. <br/>  Get exclusive updates on special deals, <br/>
-          expert tips, and latest arrivals directly in your inbox. <br/> Sign up
+          expert tips, and latest arrivals directly in your inbox.  Sign up
           today!
         </h2>
         <form

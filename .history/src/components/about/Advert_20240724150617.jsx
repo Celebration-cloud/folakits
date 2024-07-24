@@ -8,7 +8,7 @@ function Advert() {
       justifyContent: "center",
       alignItems: "center",
       height: "100%", // Adjust to fit the content or desired view height
-      color: "#333", // Dark text color for contrast
+      color: "", // Dark text color for contrast
       backgroundImage: 'url("/public/wp5204110.webp")', // Replace with your image path
       backgroundSize: "cover",
       backgroundPosition: "center",

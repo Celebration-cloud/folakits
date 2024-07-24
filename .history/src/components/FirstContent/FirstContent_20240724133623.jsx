@@ -33,7 +33,7 @@ function FirstContent() {
     {
       id: 4,
       name: "Shoes",
-      describe: `Step into comfort with our designer footwear.`,
+      describe: `Step into comfort with our designer footwear`,
       img: img3,
       path: "Shoes",
     },

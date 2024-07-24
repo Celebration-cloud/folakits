@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import styles from './AboutComponent.module.css'
 function AboutComponent() {
   // Inline CSS styles

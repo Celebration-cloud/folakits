@@ -26,14 +26,14 @@ function FirstContent() {
     {
       id: 3,
       name: "Jewelries",
-      describe: `Find your perfect piece from our exquisite jewelry range.`,
+      describe: `Suspendisse consequat sed velit amet commodo`,
       img: img3,
       path: "Jewelry",
     },
     {
       id: 4,
       name: "Shoes",
-      describe: `Step into comfort with our designer footwear.`,
+      describe: `Suspendisse consequat sed velit amet commodo`,
       img: img3,
       path: "Shoes",
     },
