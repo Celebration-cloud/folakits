@@ -57,7 +57,7 @@ const CartComponent = () => {
         orderId: uuid(),
         cart: cartListRef.current,
         user: userData[0]?.user_name,
-        phone: userData[0]?.phone_number,
+        phone: 
         email: userData[0]?.email,
         status: "pending",
         total: overallSum + cartTotalsData.shipping,
