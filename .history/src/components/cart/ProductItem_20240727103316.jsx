@@ -55,7 +55,7 @@ function handleRemoveItem(itemId) {
           ></i>
         </div>
       ))}
-      {cart.length < 1|| !cart && (
+      {cart.len < 1|| !cart && (
         <div className="flex flex-col items-center justify-center h-screen bg-background">
           <img
             src="https://placehold.co/400?text=🛒&bg=primary&text_color=primary-foreground"

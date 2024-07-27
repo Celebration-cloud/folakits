@@ -60,6 +60,7 @@ export const signUpUser = (userData) => async (dispatch, getState) => {
 export const loginUser =
   (userData, setLogged) => async (dispatch, getState) => {
     try {
+      dispatch({ type: ActionTypes.GET_LOADING, payload: true });
       const user = await signInWithEmailAndPassword(
         auth,
         userData.email,
