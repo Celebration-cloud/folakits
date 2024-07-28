@@ -54,9 +54,15 @@ function handleWish(item) {
 
 
   const fet = useCallback(() => {
-      dispatch(getItemDetails(preview || name));
+    if(preview){
+      return productDetails.filter(item => item.id === name)
+    }
+    if(!preview){
+      dispatch(getItemDetails(name));
+      return productDetails.filter(item => item.id === name)
+    }
      wishlistRef.current = userData ? userData[0]?.wishlist : [];
-  }, [dispatch, name, userData, preview]);
+  }, [dispatch, name, userData, preview, pro]);
   useEffect(() => {
     
       fet();

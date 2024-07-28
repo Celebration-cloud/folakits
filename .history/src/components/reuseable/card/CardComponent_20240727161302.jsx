@@ -67,7 +67,6 @@ const CardComponent = ({ product, wishlistRef, cartListRef }) => {
           <br />
           Category: <span style={{ color: "blue" }}>{product.category}</span>
         </p>
-        <h3>Quantity: {product.quantity}</h3>
         <Rating />
       </div>
       <div className={style["card-footer"]}>
@@ -77,11 +76,12 @@ const CardComponent = ({ product, wishlistRef, cartListRef }) => {
             {product?.originalPrice && (
               <span style={styles.originalPrice}>
                 &#x20A6;{product?.originalPrice}
+                {product?.quantity
               </span>
             )}
           </strong>
         </span>
-        {product?.quantity > 0 && (
+        {product?.quantity.length < 1 && (
           <div
             onClick={() => handleCart(product)}
             className={style["card-button"]}

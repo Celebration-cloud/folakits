@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getItemDetails } from "../../store/actions/quoteActions";
 import { userCartList, userWishlist } from "../../store/actions/userActions";
 import { toaster } from "evergreen-ui";
-function Content({preview}) {
+function Content() {
   const { session } = useSelector((state) => state.user);
   const { userData } = useSelector((state) => state.user);
   const { productDetails } = useSelector((state) => state.product);
@@ -54,9 +54,9 @@ function handleWish(item) {
 
 
   const fet = useCallback(() => {
-      dispatch(getItemDetails(preview || name));
+      dispatch(getItemDetails(name));
      wishlistRef.current = userData ? userData[0]?.wishlist : [];
-  }, [dispatch, name, userData, preview]);
+  }, [dispatch, name, userData]);
   useEffect(() => {
     
       fet();
@@ -109,7 +109,6 @@ function handleWish(item) {
 
           <div className={styles.info}>
             <h3 className={styles.title}>{item.product}</h3>
-            <h4>Brand: {item.brand}</h4>
             <span className={styles.price}>
               &#x20A6;{item.price.toFixed(2)}
             </span>
@@ -121,7 +120,7 @@ function handleWish(item) {
               )}
               
               <div>
-                <Button disabled={item.quantity < 1} onClick={() => handleCart(item)} name={item.quantity < 1 ? "Out of Stock" : "Add to Cart"} />
+                <Button disabled={item.quantity < 1} onClick={() => handleCart(item)} name={item.quantity < 1 ? "Out of " : "Add to Cart"} />
               </div>
             </section>
             <section className={styles.wishing}>

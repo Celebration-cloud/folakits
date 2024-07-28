@@ -67,7 +67,7 @@ const CardComponent = ({ product, wishlistRef, cartListRef }) => {
           <br />
           Category: <span style={{ color: "blue" }}>{product.category}</span>
         </p>
-        <h3>Quantity: {product.quantity}</h3>
+        <h4>Quantity: {}</h4>
         <Rating />
       </div>
       <div className={style["card-footer"]}>

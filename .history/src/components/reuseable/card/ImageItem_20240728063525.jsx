@@ -130,6 +130,7 @@ function ImageItem({ product, wishlistRef }) {
               style={hoverImageStyle}
             />
           )}
+          <p
         </>
       ) : (
         <>
