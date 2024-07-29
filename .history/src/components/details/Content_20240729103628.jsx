@@ -108,14 +108,11 @@ function handleWish(item) {
           </div>
 
           <div className={styles.info}>
-            <strong className={styles.title}>{item.product}</strong>
-            <strong>Brand: {item.brand}</strong>
-            <h3>Quantity: {item.quantity}</h3>
+            <h3 className={styles.title}>{item.product}</h3>
+            <h4>Brand: {item.brand}</h4>
+            <h3>Quantity: {product.quantity}</h3>
             <span className={styles.price}>
-              <strong>
-
               &#x20A6;{item.price.toFixed(2)}
-              </strong>
             </span>
             <section className={styles.selection}>
               {item.quantity > 0 && (

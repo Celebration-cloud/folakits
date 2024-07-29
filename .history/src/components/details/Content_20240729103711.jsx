@@ -112,10 +112,7 @@ function handleWish(item) {
             <strong>Brand: {item.brand}</strong>
             <h3>Quantity: {item.quantity}</h3>
             <span className={styles.price}>
-              <strong>
-
               &#x20A6;{item.price.toFixed(2)}
-              </strong>
             </span>
             <section className={styles.selection}>
               {item.quantity > 0 && (
