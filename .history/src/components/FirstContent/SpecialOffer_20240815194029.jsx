@@ -1,40 +1,40 @@
-import { useCallback, useEffect, useState } from "react";
-import Button from "../reuseable/button/Button";
+import { useCallback, useEffect, useState } from 'react';
+import Button from '../reuseable/button/Button';
 // import styles from './SpecialOffer.module.css'
 import img1 from "/public/red dress.png";
-
 function SpecialOffer() {
+  
   // Calculate the time left until the target date
-  const calculateTimeLeft = useCallback(() => {
-    const targetDate = new Date("2024-08-18T00:00:00");
-    const now = new Date();
-    const timeDifference = targetDate - now;
+  const calculateTimeLeft =  useCallback(
+    () => {
+      const targetDate = new Date("2024-08-T00:00:00");
+      const now = new Date();
+      const timeDifference = targetDate - now;
 
-    const totalSeconds = Math.floor(timeDifference / 1000); // Convert milliseconds to seconds
+      const totalSeconds = Math.floor(timeDifference / 1000); // Convert milliseconds to seconds
 
-    const days = Math.floor(totalSeconds / (3600 * 24));
-    const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = Math.floor(totalSeconds % 60);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = Math.floor(totalSeconds % 60);
 
-    return { days, hours, minutes, seconds };
-  }, []);
-
+      return { days, hours, minutes, seconds };
+    },
+    [],
+  )
+  
   // Initialize the state with the initial time left
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   // Update the countdown every second
   useEffect(() => {
     const timer = setInterval(() => {
-      const newTimeLeft = calculateTimeLeft();
-      setTimeLeft(newTimeLeft);
-
-      // Stop the timer when the countdown reaches zero
+      setTimeLeft(calculateTimeLeft());
       if (
-        newTimeLeft.days === 0 &&
-        newTimeLeft.hours === 0 &&
-        newTimeLeft.minutes === 0 &&
-        newTimeLeft.seconds === 0
+        timeLeft.days === 0 &&
+        timeLeft.hours === 0 &&
+        timeLeft.minutes === 0 &&
+        timeLeft.seconds === 0
       ) {
         clearInterval(timer);
       }
@@ -42,7 +42,7 @@ function SpecialOffer() {
 
     // Clean up the interval when the component unmounts
     return () => clearInterval(timer);
-  }, [calculateTimeLeft]);
+  }, [calculateTimeLeft, timeLeft]);
 
   return (
     <div className="bg-[var(--background)] text-[var(--foreground)] p-8 rounded-lg shadow-lg text-center max-w-md mx-auto">
@@ -80,4 +80,4 @@ function SpecialOffer() {
   );
 }
 
-export default SpecialOffer;
+export default SpecialOffer

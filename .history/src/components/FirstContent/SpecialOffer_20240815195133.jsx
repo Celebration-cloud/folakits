@@ -6,7 +6,7 @@ import img1 from "/public/red dress.png";
 function SpecialOffer() {
   // Calculate the time left until the target date
   const calculateTimeLeft = useCallback(() => {
-    const targetDate = new Date("2024-08-18T00:00:00");
+    const targetDate = new Date("2024-08-15T19:55:00");
     const now = new Date();
     const timeDifference = targetDate - now;
 
