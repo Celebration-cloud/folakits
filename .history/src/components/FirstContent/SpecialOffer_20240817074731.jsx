@@ -12,12 +12,12 @@ function SpecialOffer() {
   return (
     <div className="bg-[var(--background)] text-[var(--foreground)] p-8 rounded-lg shadow-lg text-center max-w-md mx-auto">
       <h2 className="text-2xl font-bold mb-2">Special offer</h2>
-      {/* {offer && (
+      {offer && (
         
       )}
       {!offer && (
         <p className="text-lg">No special offer available</p>
-      )} */}
+      )}
       <p className="text-muted-foreground mb-4">Baby slippers</p>
       <img
         src={offer?.img[0]}
