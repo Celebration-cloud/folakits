@@ -1,4 +1,0 @@
-export const GET_ = "GET_"
-export const SET_RANDOM_QUOTE = "SET_RANDOM_QUOTE"
-export const FAILED_RANDOM_QUOTE = "FAILED_RANDOM_QUOTE"
-export const FAILED_RANDOM_QUOTE = "FAILED_RANDOM_QUOTE"
