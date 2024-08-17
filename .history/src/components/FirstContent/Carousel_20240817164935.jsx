@@ -1,4 +1,6 @@
-import styles from "./Carousel.module.css"; 
+import React from "react";
+import styles from "./Carousel.module.css"; // Make sure to import your CSS module
+import caro from "/public/R.jpg"; // Replace with the actual image path
 import Button from "../reuseable/button/Button";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +9,11 @@ import { Rating } from "@mui/material";
 function Carousel() {
   const { advert } = useSelector((state) => state.product);
   const navigate = useNavigate()
+  // const ratings = item.rating.map((item) => item.rating) || [];
+  // const totalSum = ratings.reduce(
+  //   (accumulator, currentValue) => accumulator + currentValue,
+  //   0
+  // );
   return (
     <div
       id="carouselExampleCaptions"
@@ -57,20 +64,15 @@ function Carousel() {
             >
               <h1>{item.product}</h1>
               <p>{item?.description}</p>
+              {item.rating.map((item) => item.rating) || [].reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  )}
+  
               <span className="flex items-center">
                 <span>Product Rating:</span>
-                <Rating
-                  value={
-                    item.rating.map((item) => item.rating) ||
-                    [].reduce(
-                      (accumulator, currentValue) => accumulator + currentValue,
-                      0
-                    ) % 5
-                  }
-                />
-                <span>{`(${
-                  item.rating.map((item) => item.rating) || [].length
-                })`}</span>
+                <Rating value={totalSum % 5} disabled />
+                <span>{`(${ratings.length})`}</span>
               </span>
               <span style={{ zIndex: 0, position: "relative" }}>
                 <Button

@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Carousel.module.css"; 
 import Button from "../reuseable/button/Button";
 import { useSelector } from "react-redux";

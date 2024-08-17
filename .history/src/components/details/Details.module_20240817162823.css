@@ -13,7 +13,7 @@
     height: 100%;
 }
 .title{
-    font-size: xx-large;
+    font-size: larger;
 }
 .info{
     display: inline-flex;

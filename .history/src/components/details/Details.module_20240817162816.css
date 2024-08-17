@@ -12,9 +12,7 @@
     width: 50%;
     height: 100%;
 }
-.title{
-    font-size: xx-large;
-}
+.title
 .info{
     display: inline-flex;
     flex-direction: column;

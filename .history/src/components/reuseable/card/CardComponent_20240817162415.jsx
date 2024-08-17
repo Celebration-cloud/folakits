@@ -118,7 +118,7 @@ const handleRatingChange = (event, newValue) => {
         <span className="flex items-center">
           <span>Product Rating:</span>
           <Rating value={totalSum % 5} disabled />
-          <span>{`(${product?.rating.length})`}</span>
+          <span>(</span>
         </span>
         <br />
         <span className="flex items-center">

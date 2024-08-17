@@ -15,6 +15,7 @@ function Content({preview}) {
   const { userData } = useSelector((state) => state.user);
   const { productDetails } = useSelector((state) => state.product);
   const cartListRef = useRef([]);
+  const username = userData && userData[0]?.user_name;
   cartListRef.current = userData ? userData[0]?.cart : [];
   const wishlistRef = useRef();
   wishlistRef.current = userData ? userData[0]?.wishlist : [];
@@ -23,7 +24,6 @@ function Content({preview}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const product = productDetails[0]
-  const username = userData && userData[0]?.user_name;
   const productRatings = useRef();
   productRatings.current = product?.rating;
 

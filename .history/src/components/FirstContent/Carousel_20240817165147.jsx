@@ -1,4 +1,6 @@
-import styles from "./Carousel.module.css"; 
+import React from "react";
+import styles from "./Carousel.module.css"; // Make sure to import your CSS module
+import caro from "/public/R.jpg"; // Replace with the actual image path
 import Button from "../reuseable/button/Button";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
