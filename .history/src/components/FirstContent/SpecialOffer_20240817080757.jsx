@@ -16,13 +16,13 @@ function SpecialOffer() {
         <>
           <p className="text-muted-foreground mb-4">{offer?.product}</p>
           <div
-            style={{ width: "100%", height: "70%" }}
+            style={{ width: "100%", height: "100%" }}
             className="mx-auto mb-4"
           >
             <img
               src={offer?.img[0]}
               alt="Baby slippers"
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", height: "0%" }}
             />
           </div>
 

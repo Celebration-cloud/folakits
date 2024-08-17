@@ -18,14 +18,10 @@ export const receiveItem = () => async (dispatch, getState) => {
       where("special_offer", "==", false)
     );
 
-    const unsubscribe = onSnapshot(
-      productCollectionRef,
-      { includeMetadataChanges: true },
-      (querySnapshot) => {
-        const newData = querySnapshot.docs.map((doc) => ({ ...doc.data() }));
-        dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
-      }
-    );
+    const unsubscribe = onSnapshot(productCollectionRef, (querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({ ...doc.data() }));
+      dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
+    });
 
     return () => {
       unsubscribe();
@@ -44,14 +40,10 @@ export const getItems = () => async (dispatch, getState) => {
       where("special_offer", "==", false)
     );
 
-    const unsubscribe = onSnapshot(
-      productCollectionRef,
-      { includeMetadataChanges: true },
-      (querySnapshot) => {
-        const newData = querySnapshot.docs.map((doc) => ({ ...doc.data() }));
-        dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
-      }
-    );
+    const unsubscribe = onSnapshot(productCollectionRef, (querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({ ...doc.data() }));
+      dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
+    });
     return () => {
       unsubscribe();
     };
@@ -69,14 +61,10 @@ export const getSpecialOffer = () => async (dispatch, getState) => {
       where("special_offer", "==", true)
     );
 
-    const unsubscribe = onSnapshot(
-      productCollectionRef,
-      { includeMetadataChanges: true },
-      (querySnapshot) => {
-        const newData = querySnapshot.docs.map((doc) => ({ ...doc.data() }));
-        dispatch({ type: ActionTypes.GET_SPECIAL_OFFERS, payload: newData });
-      }
-    );
+    const unsubscribe = onSnapshot(productCollectionRef, (querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({ ...doc.data() }));
+      dispatch({ type: ActionTypes.GET_SPECIAL_OFFERS, payload: newData });
+    });
     return () => {
       unsubscribe();
     };
@@ -96,14 +84,10 @@ export const getAdvert = () => async (dispatch, getState) => {
       where("special_offer", "==", false)
     );
 
-    const unsubscribe = onSnapshot(
-      productCollectionRef,
-      { includeMetadataChanges: true },
-      (querySnapshot) => {
-        const newData = querySnapshot.docs.map((doc) => ({ ...doc.data() }));
-        dispatch({ type: ActionTypes.GET_ADVERT, payload: newData });
-      }
-    );
+    const unsubscribe = onSnapshot(productCollectionRef, (querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({ ...doc.data() }));
+      dispatch({ type: ActionTypes.GET_ADVERT, payload: newData });
+    });
     return () => {
       unsubscribe();
     };
@@ -120,19 +104,15 @@ export const getCategoryItems = (userData) => async (dispatch, getState) => {
     const productCollectionRef = query(
       collection(db, "products"),
       where("category", "==", userData),
-      where("special_offer", "==", false)
+      
     );
 
-    const unsubscribe = onSnapshot(
-      productCollectionRef,
-      { includeMetadataChanges: true },
-      (querySnapshot) => {
-        const newData = querySnapshot.docs.map((doc) => ({
-          ...doc.data(),
-        }));
-        dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
-      }
-    );
+    const unsubscribe = onSnapshot(productCollectionRef, (querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+      }));
+      dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
+    });
     return () => {
       unsubscribe();
     };
@@ -151,16 +131,12 @@ export const getItemDetails = (userData) => async (dispatch, getState) => {
       where("product", "==", userData)
     );
 
-    const unsubscribe = onSnapshot(
-      productCollectionRef,
-      { includeMetadataChanges: true },
-      (querySnapshot) => {
-        const newData = querySnapshot.docs.map((doc) => ({
-          ...doc.data(),
-        }));
-        dispatch({ type: ActionTypes.GET_PRODUCT_DETAILS, payload: newData });
-      }
-    );
+    const unsubscribe = onSnapshot(productCollectionRef, (querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+      }));
+      dispatch({ type: ActionTypes.GET_PRODUCT_DETAILS, payload: newData });
+    });
     return () => {
       unsubscribe();
     };
@@ -175,20 +151,15 @@ export const searchItem = (userData) => async (dispatch, getState) => {
   try {
     const productCollectionRef = query(
       collection(db, "products"),
-      where("product", "==", userData),
-      where("special_offer", "==", false)
+      where("product", "in", userData)
     );
     if (productCollectionRef) {
-      const unsubscribe = onSnapshot(
-        productCollectionRef,
-        { includeMetadataChanges: true },
-        (querySnapshot) => {
-          const newData = querySnapshot.docs.map((doc) => ({
-            ...doc.data(),
-          }));
-          dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
-        }
-      );
+      const unsubscribe = onSnapshot(productCollectionRef, (querySnapshot) => {
+        const newData = querySnapshot.docs.map((doc) => ({
+          ...doc.data(),
+        }));
+        dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
+      });
       return () => {
         unsubscribe();
       };

@@ -175,20 +175,16 @@ export const searchItem = (userData) => async (dispatch, getState) => {
   try {
     const productCollectionRef = query(
       collection(db, "products"),
-      where("product", "==", userData),
-      where("special_offer", "==", false)
+      where("product", "in", userData),
+      // where("special_offer", "==", false)
     );
     if (productCollectionRef) {
-      const unsubscribe = onSnapshot(
-        productCollectionRef,
-        { includeMetadataChanges: true },
-        (querySnapshot) => {
-          const newData = querySnapshot.docs.map((doc) => ({
-            ...doc.data(),
-          }));
-          dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
-        }
-      );
+      const unsubscribe = onSnapshot(productCollectionRef, ,(querySnapshot) => {
+        const newData = querySnapshot.docs.map((doc) => ({
+          ...doc.data(),
+        }));
+        dispatch({ type: ActionTypes.GET_PRODUCTS, payload: newData });
+      });
       return () => {
         unsubscribe();
       };

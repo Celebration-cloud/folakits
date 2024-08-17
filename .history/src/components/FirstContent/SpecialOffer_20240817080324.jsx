@@ -14,15 +14,12 @@ function SpecialOffer() {
       <h2 className="text-2xl font-bold mb-2">Special offer</h2>
       {offer && (
         <>
-          <p className="text-muted-foreground mb-4">{offer?.product}</p>
-          <div
-            style={{ width: "100%", height: "70%" }}
-            className="mx-auto mb-4"
-          >
+          <p className="text-muted-foreground mb-4">Baby slippers</p>
+          <div className="mx-auto mb-4 w-100 h-75">
             <img
               src={offer?.img[0]}
               alt="Baby slippers"
-              style={{ width: "100%", height: "100%" }}
+              style={{wid}}
             />
           </div>
 

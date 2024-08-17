@@ -16,7 +16,7 @@ function SpecialOffer() {
         <>
           <p className="text-muted-foreground mb-4">{offer?.product}</p>
           <div
-            style={{ width: "100%", height: "70%" }}
+            style={{ width: "100%", height: "100%" }}
             className="mx-auto mb-4"
           >
             <img

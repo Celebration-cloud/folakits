@@ -176,7 +176,7 @@ export const searchItem = (userData) => async (dispatch, getState) => {
     const productCollectionRef = query(
       collection(db, "products"),
       where("product", "==", userData),
-      where("special_offer", "==", false)
+      // where("special_offer", "==", false)
     );
     if (productCollectionRef) {
       const unsubscribe = onSnapshot(
