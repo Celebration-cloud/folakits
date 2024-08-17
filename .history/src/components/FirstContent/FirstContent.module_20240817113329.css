@@ -1,11 +1,16 @@
 .first-content{
     display: inline-flex;
     flex-direction: column;
+    width: 100%;
     padding: 30px 50px 30px 50px;
     position: relative;
+    z-index: 0;
+    box-sizing: border-box;
+    cur
 }
 .specials{
     display: inline-flex;
+    width: 100%;
     gap: 50px;
 }
 .image{
@@ -19,6 +24,7 @@
 }
 .collection{
     display: inline-flex;
+    width: 100%;
     gap: 20px;
     padding-top: 40px;
 }
@@ -32,10 +38,16 @@
     align-items: center;
 }
 .collection section:hover{
-    margin-top: -30px;
+    animation: card 500ms ease alternate;
+    animation-fill-mode: forwards;
 }
-@keyframes car {
-    
+@keyframes card {
+    from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
 }
 @media (max-width: 1068px) {
     .collection{
