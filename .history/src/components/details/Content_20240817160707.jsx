@@ -35,14 +35,14 @@ function Content({preview}) {
 
   const userRating =
     product?.rating.find(
-      (item) => item.name === username
-    ) || 0;
+      (item) => item.name === userData && userData[0]?.user_name
+    ) || null;
 
   const handleRatingChange = (event, newValue) => {
     if (!session) return navigate("/log");
     if (userRating) {
       const updateRate = productRatings.current.map((item) =>
-        item.name === username
+        item.name === userData && userData[0]?.user_name
           ? { ...item, rating: newValue }
           : item
       );
@@ -50,7 +50,7 @@ function Content({preview}) {
       dispatch(userRatingData(productRatings.current, product?.product));
     } else {
       const newRate = {
-        name: username,
+        name: userData && userData[0]?.user_name,
         rating: newValue,
       };
       productRatings.current = [...productRatings.current, newRate];
@@ -58,6 +58,7 @@ function Content({preview}) {
     }
   };
 
+  console.log(`Total Sum of Ratings: ${totalSum % 5}`);
 function handleWish(item) {
   if (session) {
     if (userData) {

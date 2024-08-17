@@ -24,8 +24,8 @@ const totalSum = ratings.reduce(
 );
 const userRating =
   product?.rating.find(
-    (item) => item.name === username
-  ) || 0;
+    (item) => item.name === userData && userData[0]?.user_name
+  ) || null;
 
 
 const handleRatingChange = (event, newValue) => {

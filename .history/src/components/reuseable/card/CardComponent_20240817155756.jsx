@@ -14,25 +14,25 @@ const { userData } = useSelector((state) => state.user);
 const navigate = useNavigate();
 const dispatch = useDispatch();
 const productRatings = useRef()
-const username = userData && userData[0]?.user_name;
-productRatings.current = product?.rating
+productRatings.current = product?.rating;
 
 const ratings = product?.rating.map((item) => item.rating) || [];
 const totalSum = ratings.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
   0
 );
+
 const userRating =
   product?.rating.find(
-    (item) => item.name === username
-  ) || 0;
+    (item) => item.name === userData && userData?[0]?.user_name
+  ) || null;
 
 
 const handleRatingChange = (event, newValue) => {
   if (!session) return navigate("/log");
   if (userRating) {
     const updateRate = productRatings.current.map((item) =>
-      item.name === username
+      item.name === userData && userData[0]?.user_name
         ? { ...item, rating: newValue }
         : item
     );
@@ -40,7 +40,7 @@ const handleRatingChange = (event, newValue) => {
     dispatch(userRatingData(productRatings.current, product?.product));
   } else {
     const newRate = {
-      name: username,
+      name: userData && userData[0]?.user_name,
       rating: newValue,
     };
     productRatings.current = [...productRatings.current, newRate]

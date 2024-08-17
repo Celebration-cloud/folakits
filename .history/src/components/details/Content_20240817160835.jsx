@@ -36,7 +36,7 @@ function Content({preview}) {
   const userRating =
     product?.rating.find(
       (item) => item.name === username
-    ) || 0;
+    ) || null;
 
   const handleRatingChange = (event, newValue) => {
     if (!session) return navigate("/log");
@@ -58,6 +58,7 @@ function Content({preview}) {
     }
   };
 
+  console.log(`Total Sum of Ratings: ${totalSum % 5}`);
 function handleWish(item) {
   if (session) {
     if (userData) {

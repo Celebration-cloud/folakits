@@ -123,7 +123,7 @@ export const userWishlist =
   };
 export const userRatingData =
   (userRatings, product) => async () => {
-    const updateRef = doc(db, 'products', product);
+    const updateRef = doc(db, `products`, product);
     try {
       await updateDoc(updateRef, {
         rating: userRatings,
