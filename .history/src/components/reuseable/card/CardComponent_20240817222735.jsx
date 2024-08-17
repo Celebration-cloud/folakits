@@ -84,10 +84,8 @@ const handleRatingChange = (event, newValue) => {
               );
 
               toaster.success("Added to cart");
-            }
-          
-        }
-      }else {
+
+    } else {
       navigate("/log");
     }
   }

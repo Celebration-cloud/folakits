@@ -87,7 +87,8 @@ const handleRatingChange = (event, newValue) => {
             }
           
         }
-      }else {
+      }
+    } else {
       navigate("/log");
     }
   }
