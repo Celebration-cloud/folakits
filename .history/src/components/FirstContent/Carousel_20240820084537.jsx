@@ -68,7 +68,7 @@ function Carousel() {
                   }
                 />
                 <span>{`(${
-                  item.rating.map((item) => item.rating || []).length
+                  item.rating.map((item) => item.rating || ).length
                 })`}</span>
               </span>
               <span style={{ zIndex: 0, position: "relative" }}>

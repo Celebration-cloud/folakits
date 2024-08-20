@@ -61,14 +61,14 @@ function Carousel() {
                 <span>Product Rating:</span>
                 <Rating
                   value={
-                    item.rating.map((item) => item.rating || []).reduce(
+                    item.rating.map((item) => item.rating).reduce(
                       (accumulator, currentValue) => accumulator + currentValue,
                       0
-                    ) % 5
+                    ) 5
                   }
                 />
                 <span>{`(${
-                  item.rating.map((item) => item.rating || []).length
+                  item.rating.map((item) => item.rating) || [].length
                 })`}</span>
               </span>
               <span style={{ zIndex: 0, position: "relative" }}>
